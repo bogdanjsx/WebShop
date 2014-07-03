@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
 public class ItemList extends ListActivity {
 
 	ListView lista;
@@ -49,7 +50,7 @@ public class ItemList extends ListActivity {
 	            @Override
 	            public void onItemClick(AdapterView<?> adaptor, View arg1, int position,
 	                    long id) {
-	                Toast.makeText(ItemList.this, "Ati selectat "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
+	                Toast.makeText(ItemList.this, "You added "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
 					ItemList.this.finish();
 	            }
 

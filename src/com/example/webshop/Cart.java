@@ -47,7 +47,7 @@ public class Cart extends ListActivity{
             @Override
             public void onItemClick(AdapterView<?> adaptor, View arg1, int position,
                     long id) {
-                Toast.makeText(Cart.this, "Apasati lung pentru a sterge produsul", Toast.LENGTH_SHORT).show()    ;
+                Toast.makeText(Cart.this, "Press and hold an item to remove it", Toast.LENGTH_SHORT).show()    ;
             }
 
         });
@@ -57,7 +57,7 @@ public class Cart extends ListActivity{
 
             public boolean onItemLongClick(AdapterView<?> adaptor, View arg1, int position,
                     long id) {
-            	Toast.makeText(Cart.this, "Ati sters produsul "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
+            	Toast.makeText(Cart.this, "You removed "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
         		nume.remove(adaptor.getItemAtPosition(position));
 				adapter.notifyDataSetChanged();
 				return true;

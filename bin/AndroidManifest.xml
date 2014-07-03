@@ -28,6 +28,10 @@
     		android:name="com.example.webshop.Cart"
     		android:label="cart" >
 		</activity>
+		        <activity
+    		android:name="com.example.webshop.ItemList"
+    		android:label="item_list" >
+		</activity>
     </application>
 
 </manifest>

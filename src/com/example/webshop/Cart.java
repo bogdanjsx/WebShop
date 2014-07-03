@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnLongClickListener;
@@ -68,8 +69,8 @@ public class Cart extends ListActivity{
         addbtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	//Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
-            	nume.add("CATA");
-            	adapter.notifyDataSetChanged();
+            	Intent intent = new Intent(Cart.this, ItemList.class);
+            	startActivity(intent);
             }
         });
         
@@ -107,5 +108,6 @@ public class Cart extends ListActivity{
     					alertDialog.show();
             }
         });
-    }
+
+    } 
 }

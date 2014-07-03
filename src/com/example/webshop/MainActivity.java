@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         params.put("session", "61ff95571aa3db550df827f0cae10c938cd31fd2");
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://localhost:5000/api/list", new JsonHttpResponseHandler() {
+        client.post("https://10.0.2.2:5000/api/", params, new JsonHttpResponseHandler() {
 
             @Override
             public void onStart() {

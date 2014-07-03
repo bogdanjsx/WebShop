@@ -50,8 +50,7 @@ public class ItemList extends ListActivity {
 	            public void onItemClick(AdapterView<?> adaptor, View arg1, int position,
 	                    long id) {
 	                Toast.makeText(ItemList.this, "Ati selectat "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
-	            	Intent intent = new Intent(ItemList.this, Cart.class);
-	            	startActivity(intent);
+					ItemList.this.finish();
 	            }
 
 	        });

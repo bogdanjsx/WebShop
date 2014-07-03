@@ -95,16 +95,12 @@ public class Cart extends ListActivity{
     					  })
     					.setNegativeButton("No",new DialogInterface.OnClickListener() {
     						public void onClick(DialogInterface dialog,int id) {
-    							// if this button is clicked, just close
-    							// the dialog box and do nothing
     							dialog.cancel();
     						}
     					});
     	 
-    					// create alert dialog
     					AlertDialog alertDialog = alertDialogBuilder.create();
     	 
-    					// show it
     					alertDialog.show();
             }
         });

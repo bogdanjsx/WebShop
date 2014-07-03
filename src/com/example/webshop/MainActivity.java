@@ -35,47 +35,47 @@ public class MainActivity extends Activity {
         });
         
         
-//        RequestParams params = new RequestParams();
-//        params.put("api_auth", "VECeKU2puHatudreb7A3");
-//        params.put("trigger", "user_profile");
-//        params.put("id_user", "35");
-//        params.put("session", "61ff95571aa3db550df827f0cae10c938cd31fd2");
-//
-//        AsyncHttpClient client = new AsyncHttpClient();
-//        client.post("https://worty.ro/api/", params, new JsonHttpResponseHandler() {
-//
-//            @Override
-//            public void onStart() {
-//                // called before request is started
-//            }
-//
-//            @Override
-//            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-//                // called when response HTTP status is "200 OK"
-//                System.out.println(response.toString());
-//            }
-//
-//            @Override
-//            public void onFailure(int statusCode, Header[] headers, java.lang.Throwable throwable, JSONObject errorResponse) {
-//                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
-//                System.out.println(errorResponse.toString());
-//            }
-//
-//            @Override
-//            public void onRetry(int retryNo) {
-//                // called when request is retried
-//            }
-//        });
-//    
-//    }
-//
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
+        RequestParams params = new RequestParams();
+        params.put("api_auth", "VECeKU2puHatudreb7A3");
+        params.put("trigger", "user_profile");
+        params.put("id_user", "35");
+        params.put("session", "61ff95571aa3db550df827f0cae10c938cd31fd2");
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.post("https://worty.ro/api/", params, new JsonHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                // called before request is started
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                // called when response HTTP status is "200 OK"
+                System.out.println(response.toString());
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, java.lang.Throwable throwable, JSONObject errorResponse) {
+                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                System.out.println(errorResponse.toString());
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                // called when request is retried
+            }
+        });
     
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+ 
     
 }

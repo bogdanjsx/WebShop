@@ -3,21 +3,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-        <ListView
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:layout_marginTop="5dip"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    
+    <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dip"
-        android:longClickable="true"
+        android:layout_below="@+id/title"
         >
 </ListView>
 
-        <Button
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:textSize="20sp"
+        android:layout_below="@android:id/list"/>
+    
+    <Button
         android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start"
+        android:text="@string/add"
+        android:layout_marginLeft="15dip"
+        android:layout_marginBottom="15dip"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+     />
+    
+    <Button
+        android:id="@+id/buy_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buy"
+        android:layout_marginRight="15dip"
+        android:layout_marginBottom="15dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+     />
 
 </RelativeLayout>

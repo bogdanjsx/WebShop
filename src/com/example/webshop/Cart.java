@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 import com.example.webshop.R;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnLongClickListener;
@@ -19,9 +22,10 @@ import android.widget.Toast;
 public class Cart extends ListActivity{
     
 	ListView lista;
-	Button btn;
+	Button addbtn, buybtn;
 	ArrayList<String> nume;
 	ArrayAdapter<String> adapter;
+	final Context context = this;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,7 @@ public class Cart extends ListActivity{
             @Override
             public void onItemClick(AdapterView<?> adaptor, View arg1, int position,
                     long id) {
-                Toast.makeText(Cart.this, "Ai apasat pe "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
+                Toast.makeText(Cart.this, "Apasati lung pentru a sterge produsul", Toast.LENGTH_SHORT).show()    ;
             }
 
         });
@@ -52,6 +56,7 @@ public class Cart extends ListActivity{
 
             public boolean onItemLongClick(AdapterView<?> adaptor, View arg1, int position,
                     long id) {
+            	Toast.makeText(Cart.this, "Ati sters produsul "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
         		nume.remove(adaptor.getItemAtPosition(position));
 				adapter.notifyDataSetChanged();
 				return true;
@@ -59,12 +64,47 @@ public class Cart extends ListActivity{
 
         });
         
-        btn = (Button)findViewById(R.id.add_button);
-        btn.setOnClickListener(new View.OnClickListener() {
+        addbtn = (Button)findViewById(R.id.add_button);
+        addbtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Toast.makeText(getApplicationContext(), "Button pressed", Toast.LENGTH_SHORT).show();
+            	//Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
             	nume.add("CATA");
             	adapter.notifyDataSetChanged();
+            }
+        });
+        
+        buybtn = (Button)findViewById(R.id.buy_button);
+        buybtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+    			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+    	 
+    				// set title
+    				alertDialogBuilder.setTitle("Buy notice");
+    	 
+    				// set dialog message
+    				alertDialogBuilder
+    					.setMessage("Are you sure you want to buy these items?")
+    					.setCancelable(false)
+    					.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+    						public void onClick(DialogInterface dialog,int id) {
+    							// if this button is clicked, close
+    							// current activity
+    							Cart.this.finish();
+    						}
+    					  })
+    					.setNegativeButton("No",new DialogInterface.OnClickListener() {
+    						public void onClick(DialogInterface dialog,int id) {
+    							// if this button is clicked, just close
+    							// the dialog box and do nothing
+    							dialog.cancel();
+    						}
+    					});
+    	 
+    					// create alert dialog
+    					AlertDialog alertDialog = alertDialogBuilder.create();
+    	 
+    					// show it
+    					alertDialog.show();
             }
         });
     }

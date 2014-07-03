@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         params.put("session", "61ff95571aa3db550df827f0cae10c938cd31fd2");
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.post("https://worty.ro/api/", params, new JsonHttpResponseHandler() {
+        client.get("http://localhost:5000/api/list", new JsonHttpResponseHandler() {
 
             @Override
             public void onStart() {
@@ -51,6 +51,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+            	System.out.println("SUCCESS");
                 // called when response HTTP status is "200 OK"
                 System.out.println(response.toString());
             }
@@ -58,7 +59,7 @@ public class MainActivity extends Activity {
             @Override
             public void onFailure(int statusCode, Header[] headers, java.lang.Throwable throwable, JSONObject errorResponse) {
                 // called when response HTTP status is "4XX" (eg. 401, 403, 404)
-                System.out.println(errorResponse.toString());
+                System.out.println("TEST");
             }
 
             @Override

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.example.webshop.R;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnLongClickListener;
@@ -62,10 +63,12 @@ public class Cart extends ListActivity{
         btn = (Button)findViewById(R.id.add_button);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Toast.makeText(getApplicationContext(), "Button pressed", Toast.LENGTH_SHORT).show();
-            	nume.add("CATA");
-            	adapter.notifyDataSetChanged();
+            	Intent intent = new Intent(Cart.this, ItemList.class);
+            	startActivity(intent);
             }
         });
+        
+
+        
     }
 }

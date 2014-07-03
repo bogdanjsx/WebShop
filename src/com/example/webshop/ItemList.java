@@ -31,6 +31,14 @@ public class ItemList extends ListActivity {
 
 	        nume = new ArrayList<String>();
 	        nume.add("Salut"); nume.add("Buna"); nume.add("Bonjour"); nume.add("Guten Morgen");
+	        nume.add("Sayonara"); nume.add("Hello"); nume.add("Hiya"); nume.add("Hey");
+	        nume.add("Manowar");
+	        nume.add("Salut"); nume.add("Buna"); nume.add("Bonjour"); nume.add("Guten Morgen");
+	        nume.add("Sayonara"); nume.add("Hello"); nume.add("Hiya"); nume.add("Hey");
+	        nume.add("Manowar");
+	        nume.add("Salut"); nume.add("Buna"); nume.add("Bonjour"); nume.add("Guten Morgen");
+	        nume.add("Sayonara"); nume.add("Hello"); nume.add("Hiya"); nume.add("Hey");
+	        nume.add("Manowar");
 
 	        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nume);
 	        setListAdapter(adapter);

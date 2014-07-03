@@ -26,11 +26,11 @@
         
         <activity
     		android:name="com.example.webshop.Cart"
-    		android:label="cart" >
+    		android:label="Cart" >
 		</activity>
 		        <activity
     		android:name="com.example.webshop.ItemList"
-    		android:label="item_list" >
+    		android:label="Item List" >
 		</activity>
     </application>
 

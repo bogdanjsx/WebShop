@@ -11,7 +11,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="30sp" />
-        <ListView
+
+                <LinearLayout
+     android:id="@+id/linear"
+     android:layout_height="wrap_content"
+     android:layout_gravity="center_horizontal"
+     android:layout_width="fill_parent"
+     android:paddingLeft="12dp"
+     android:paddingRight="12dp"
+     android:paddingTop="4dp"
+     android:layout_below="@+id/title">
+    
+    <ListView
         android:id="@android:id/list"
 
         android:layout_width="fill_parent"
@@ -19,9 +30,10 @@
         android:layout_margin="10dip"
         android:longClickable="false"
         >
+
 </ListView>
 
-
+</LinearLayout>
 
 </RelativeLayout>
 

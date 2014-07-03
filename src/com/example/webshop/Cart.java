@@ -28,7 +28,7 @@ public class Cart extends ListActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
     	
-       // lista = (ListView) findViewById(android.R.id.list);
+        lista = (ListView) findViewById(android.R.id.list);
 
         nume = new ArrayList<String>();
         nume.add("Maria"); nume.add("Diana");

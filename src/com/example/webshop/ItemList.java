@@ -2,7 +2,15 @@ package com.example.webshop;
 
 import java.util.ArrayList;
 
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.example.webshop.R;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -22,6 +30,9 @@ public class ItemList extends ListActivity {
 	ListView lista;
 	ArrayList<String> nume;
 	ArrayAdapter<String> adapter;
+	ArrayList<Integer> preturi;
+	ArrayList<Integer> iduri;
+	
 	
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +42,53 @@ public class ItemList extends ListActivity {
 	        lista = (ListView) findViewById(android.R.id.list);
 
 	        nume = new ArrayList<String>();
-	        nume.add("Salut"); nume.add("Buna"); nume.add("Bonjour"); nume.add("Guten Morgen");
-	        nume.add("Sayonara"); nume.add("Hello"); nume.add("Hiya"); nume.add("Hey");
-	        nume.add("Manowar");
-	        nume.add("Salut"); nume.add("Buna"); nume.add("Bonjour"); nume.add("Guten Morgen");
-	        nume.add("Sayonara"); nume.add("Hello"); nume.add("Hiya"); nume.add("Hey");
-	        nume.add("Manowar");
-	        nume.add("Salut"); nume.add("Buna"); nume.add("Bonjour"); nume.add("Guten Morgen");
-	        nume.add("Sayonara"); nume.add("Hello"); nume.add("Hiya"); nume.add("Hey");
-	        nume.add("Manowar");
+	        preturi = new ArrayList<Integer>();
+	        iduri = new ArrayList<Integer>();
+	        
+	        RequestParams params = new RequestParams();
+	        params.put("api_auth", "VECeKU2puHatudreb7A3");
+	        params.put("trigger", "user_profile");
+	        params.put("id_user", "35");
+	        params.put("session", "61ff95571aa3db550df827f0cae10c938cd31fd2");
+
+	        AsyncHttpClient client = new AsyncHttpClient();
+	        client.get("http://10.0.2.2:5000/api/list", new JsonHttpResponseHandler() {
+
+	            @Override
+	            public void onStart() {
+	                // called before request is started
+	            }
+
+	            @Override
+	            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+	                // called when response HTTP status is "200 OK"
+	            	System.out.println(response);
+/*	            	if (response != null) { 
+	            		   for (int i=0; i<response.length(); i++){ 
+	            		    try {
+								nume.add(response.get(i).toString());
+								System.out.println(nume[-1]);
+							} catch (JSONException e) {
+								e.printStackTrace();
+							}
+	            		   } 
+	            		}
+	            	*/
+	            }
+
+	            @Override
+	            public void onFailure(int statusCode, Header[] headers, java.lang.Throwable throwable, JSONObject errorResponse) {
+	                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+	                System.out.println("TEST");
+	            }
+
+	            @Override
+	            public void onRetry(int retryNo) {
+	                // called when request is retried
+	            }
+	        });
+	    
+	    
 
 	        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nume);
 	        setListAdapter(adapter);

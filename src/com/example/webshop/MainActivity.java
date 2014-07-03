@@ -35,14 +35,14 @@ public class MainActivity extends Activity {
         });
         
         
-        RequestParams params = new RequestParams();
+/*        RequestParams params = new RequestParams();
         params.put("api_auth", "VECeKU2puHatudreb7A3");
         params.put("trigger", "user_profile");
         params.put("id_user", "35");
         params.put("session", "61ff95571aa3db550df827f0cae10c938cd31fd2");
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.post("https://10.0.2.2:5000/api/", params, new JsonHttpResponseHandler() {
+        client.get("http://10.0.2.2:5000/api/list", new JsonHttpResponseHandler() {
 
             @Override
             public void onStart() {
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
             }
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
             	System.out.println("SUCCESS");
                 // called when response HTTP status is "200 OK"
                 System.out.println(response.toString());
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
                 // called when request is retried
             }
         });
-    
+    */
     }
 
     @Override

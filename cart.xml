@@ -1,0 +1,71 @@
+WebShop
+=======
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:layout_marginTop="5dip"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    
+    <LinearLayout 
+     android:id="@+id/linear"
+     android:layout_height="wrap_content"
+     android:layout_gravity="center_horizontal"
+     android:layout_width="fill_parent"
+     android:paddingLeft="12dp"
+     android:paddingRight="12dp"
+     android:paddingTop="4dp"
+     android:layout_below="@+id/title">
+        
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dip" >
+
+	</ListView>
+    
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:textSize="20sp"         
+        android:layout_below="@+id/linear"
+        android:layout_marginLeft="15dip"/>
+    
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:layout_marginLeft="15dip"
+        android:layout_marginBottom="15dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+     />
+    
+    <Button
+        android:id="@+id/buy_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buy"
+        android:layout_marginRight="15dip"
+        android:layout_marginBottom="15dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+     />
+
+</RelativeLayout>

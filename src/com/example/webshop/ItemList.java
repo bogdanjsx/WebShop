@@ -33,6 +33,9 @@ public class ItemList extends ListActivity {
 	ArrayList<Integer> preturi;
 	ArrayList<Integer> iduri;
 	
+    public static String text = new String();
+    public static int ok = 0;
+	
 	
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,9 @@ public class ItemList extends ListActivity {
 	        nume = new ArrayList<String>();
 	        preturi = new ArrayList<Integer>();
 	        iduri = new ArrayList<Integer>();
+	        
+	        for(int i=1; i<11; i++)
+	        	nume.add("New product "+ i);
 	        
 	        RequestParams params = new RequestParams();
 	        params.put("api_auth", "VECeKU2puHatudreb7A3");
@@ -99,7 +105,13 @@ public class ItemList extends ListActivity {
 	            @Override
 	            public void onItemClick(AdapterView<?> adaptor, View arg1, int position,
 	                    long id) {
-	                Toast.makeText(ItemList.this, "You added "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show()    ;
+	                Toast.makeText(ItemList.this, "You added "+ adaptor.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+	                text = adaptor.getItemAtPosition(position).toString();
+	                ok = 1;
+	                Intent returnIntent = new Intent();
+	                returnIntent.putExtra("result",text);
+	                setResult(RESULT_OK,returnIntent);
+	                finish();
 					ItemList.this.finish();
 	            }
 

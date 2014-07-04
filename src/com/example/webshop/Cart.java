@@ -36,11 +36,13 @@ public class Cart extends ListActivity{
         lista = (ListView) findViewById(android.R.id.list);
 
         nume = new ArrayList<String>();
-        nume.add("Maria"); nume.add("Diana");
+        //nume.add("Produs 1"); nume.add("Produs 2");
         
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nume);
         setListAdapter(adapter);
+        
+
 
         lista.setOnItemClickListener(new OnItemClickListener() {
 
@@ -70,8 +72,11 @@ public class Cart extends ListActivity{
             public void onClick(View v) {
             	//Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
             	Intent intent = new Intent(Cart.this, ItemList.class);
-            	startActivity(intent);
+            	startActivityForResult(intent, 1);
+//                if (ItemList.ok > 0)
+//                	nume.add(ItemList.text);
             }
+            
         });
         
         buybtn = (Button)findViewById(R.id.buy_button);
@@ -106,4 +111,17 @@ public class Cart extends ListActivity{
         });
 
     } 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK){
+                String result=data.getStringExtra("result");
+                nume.add(result);
+                adapter.notifyDataSetChanged();
+            }
+            if (resultCode == RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }//onActivityResult
 }
